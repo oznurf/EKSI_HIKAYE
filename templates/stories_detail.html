@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1>{{ object.title }}</h1>
 {{ object.content }}
 {% for story in object.children.all %}
@@ -21,6 +18,4 @@
     <button type="submit">Gonder</button>
 </form>
 
-</body>
-
-</html>
+{% endblock %}
