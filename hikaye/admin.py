@@ -5,7 +5,7 @@ from .models import Story
 
 
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ['title','writer','score','is_reported']
+    list_display = ['title_or_parent','writer','score','is_reported']
     list_filter = ['is_reported']
     search_fields = ['title','content']
     fields = [

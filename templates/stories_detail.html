@@ -5,6 +5,22 @@
     <title></title>
 </head>
 <body>
-{{ object }}
+<h1>{{ object.title }}</h1>
+{{ object.content }}
+{% for story in object.children.all %}
+    <hr>
+    {{ story.content }}
+{% endfor %}
+
+<hr style="color: red;">
+{{ form.errors }}
+<form action="." method="post">
+    {% csrf_token %}
+    <label for="content_area">Hikaye</label>
+    <textarea name="content" id="content_area" ></textarea>
+    <button type="submit">Gonder</button>
+</form>
+
 </body>
+
 </html>

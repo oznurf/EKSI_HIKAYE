@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^login', login_user, name='login'),
     url(r'^logout', logout_user, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^story/(?P<story_id>[0-9]+)]/$', stories_detailview, name='stories_detail'),
+    url(r'^story/(?P<story_id>[0-9]+)/$', stories_detailview, name='stories_detail'),
 
 ]

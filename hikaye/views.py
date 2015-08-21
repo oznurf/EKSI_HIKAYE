@@ -2,7 +2,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.shortcuts import render, redirect
 from .models import Story
-from hikaye.forms import MyUserCreationForm
+from hikaye.forms import MyUserCreationForm, StoryForm
 
 
 def index(request):
@@ -16,8 +16,21 @@ def index(request):
 
 
 def stories_detailview(request, story_id):
+    if request.method == 'POST':
+        yeni_veriler = request.POST.copy()
+        yeni_veriler['parent'] = story_id
+        yeni_veriler['writer'] = request.user.id
+
+        form = StoryForm(yeni_veriler)
+        if form.is_valid():
+            form.save()
+    elif request.method == 'GET':
+        form = StoryForm()
     return render(request, 'stories_detail.html',
-                  {'object': Story.objects.get(pk=story_id)})
+                  {
+                      'object': Story.objects.get(pk=story_id),
+                      'form': form
+                  })
 
 
 
