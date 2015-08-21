@@ -15,6 +15,11 @@ def index(request):
                   {'objects': objects})
 
 
+def stories_detailview(request, story_id):
+    return render(request, 'stories_detail.html',
+                  {'object': Story.objects.get(pk=story_id)})
+
+
 
 def register_user(request):
     form = MyUserCreationForm()

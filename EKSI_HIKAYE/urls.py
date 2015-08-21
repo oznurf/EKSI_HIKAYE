@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from hikaye.views import (index, register_user, login_user, logout_user)
+from hikaye.views import (index, register_user, login_user, logout_user, stories_detailview)
 
 urlpatterns = [
     url(r'^$', index, name='home'),
@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^login', login_user, name='login'),
     url(r'^logout', logout_user, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^story/(?P<story_id>[0-9]+)]/$', stories_detailview, name='stories_detail'),
+
 ]
