@@ -7,27 +7,32 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
 
-            width: 700px;
+            width: 1000px;
             margin: auto;
-        }
+            background-color: powderblue ;
+            background-image: url("../img/story_pic.jpeg");
+            background-repeat: repeat-x;
 
+        }
         th, td {
             border: 1px solid #ededed;
             padding: 10px;
         }
 
         header, footer {
-            padding: 30px;
-            background: #f7caff;
+            padding: 50px;
+            width: 1000px;
+            background: deeppink;
         }
 
         footer {
             margin-top: 30px;
         }
 
-        header h3 {
-            color: #9418ff;
+        header h2 {
+            color: white;
             margin: 0;
+
         }
 
         header ul {
@@ -61,7 +66,7 @@
 </head>
 <body>
 <header>
-    <h3>Muvindex</h3>
+    <h2> STORIES OF EXCELLENT GIRLS </h2>
     <nav>
         <ul>
             <li><a href="{% url "home" %}">Home</a></li>
